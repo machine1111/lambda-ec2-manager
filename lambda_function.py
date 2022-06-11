@@ -18,7 +18,7 @@ headers = {
   'X-Master-Key': API_KEY
 }
 
-ec2 = boto3.resource('ec2')#, region_name=AWS_REGION, aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
+ec2 = boto3.resource('ec2', region_name=AWS_REGION, aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY)
 
 def terminate_instance(id):
     ec2.instances.filter(InstanceIds=id).terminate()
